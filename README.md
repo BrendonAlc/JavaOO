@@ -1,3 +1,4 @@
 # Descrição
 
-#Projeto voltado para OO, iniciando a ideia com atribuição de conta bancária, e adicionando ações que o cliente de um banco pode realizar em sua conta bancária.
+#Project focused on OO, starting the idea with bank account assignment, and adding actions that a bank customer can perform in their bank account.
+#Creating accounts, deposits, withdrawals, transfers.
