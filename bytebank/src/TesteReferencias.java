@@ -40,5 +40,25 @@ public class TesteReferencias {
 		//System.out.println(contaDoBrendon.titular);//teste de retorno do titular
 		System.out.println("Cpf do titular da conta é: " + contaDoBrendon.getTitular().getCpf());
 		System.out.println("Profissão do cliente é: " + contaDoBrendon.getTitular().getProfissao());
+		System.out.println();
+		
+		System.out.println("Teste de controle de bonificação");
+		
+		Gerente g1 = new Gerente();
+		g1.setNome("Juninho");
+		g1.setSalario(5000.0);
+		
+		Funcionario f = new Funcionario();
+		f.setSalario(2000.0);
+		
+		EditorVideo ev = new EditorVideo();
+		f.setSalario(2500.0);
+		
+		ControleBonificacao controle = new ControleBonificacao();
+		controle.registra(g1);
+		controle.registra(f);
+		controle.registra(ev);
+		
+		System.out.println(controle.getSoma());
 	}
 }
