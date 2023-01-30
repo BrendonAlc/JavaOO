@@ -1,14 +1,13 @@
 
-public class Funcionario {
+//Classe Funcionarios abstrata, nao pode instanciar desta classe
+public abstract class Funcionario { 
 	
 	private String nome;
 	private String cpf;
 	protected double salario; //protected para ficar publico para as classes filho
 	
-	
-	public double getBonificacao() {
-		return this.salario * 0.1;
-	}
+	//metodo sem implementacao
+	public abstract double getBonificacao(); //Método abstrato, pois não existe uma bonificacao padrão para os funcionarios
 	
 	public String getNome() {
 		return nome;

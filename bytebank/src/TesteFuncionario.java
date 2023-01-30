@@ -1,8 +1,9 @@
 
 public class TesteFuncionario {
+	
 	public static void main(String[] args) {
 		
-		Funcionario brendon = new Funcionario();
+		Gerente brendon = new Gerente();
 		brendon.setNome("Brendon Alcantara");
 		brendon.setCpf("222.222.222.47");
 		brendon.setSalario(2500.50);

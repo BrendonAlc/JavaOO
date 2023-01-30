@@ -2,7 +2,7 @@
 public class TestaMetodo {
 	
 	public static void main(String[] args) {
-		Conta contaDoBrendon = new Conta(1337, 24226);
+		Conta contaDoBrendon = new ContaCorrente(1337, 24226);
 		contaDoBrendon.getSaldo();
 		contaDoBrendon.deposita(50);
 		System.out.println("valor de saldo da conta é: " + contaDoBrendon.getSaldo());
@@ -12,7 +12,7 @@ public class TestaMetodo {
 		System.out.println(conseguiuRetirar);
 		
 		//Nova conta
-		Conta contaDaLuciana = new Conta(1337, 24226);
+		Conta contaDaLuciana = new ContaCorrente(1337, 24226);
 		contaDaLuciana.deposita(600);
 		
 		//Teste de tranferencia

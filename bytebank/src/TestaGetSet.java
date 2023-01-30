@@ -1,7 +1,7 @@
 
 public class TestaGetSet {
 	public static void main(String[] args) {
-		Conta conta = new Conta(1337, 24226);
+		Conta conta = new ContaCorrente(1337, 24226);
 		
 		//conta.numero = 1337;
 		conta.setNumero(1337);

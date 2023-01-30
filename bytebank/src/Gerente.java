@@ -19,7 +19,7 @@ public class Gerente extends Funcionario {
 	
 	//Bonificação de salario do Gerente é 1 salário utilizando variavel da superClass
 	public double getBonificacao() {
-		return super.getBonificacao() + super.getSalario();
+		return super.getSalario();
 	}
 	
 }

@@ -4,7 +4,7 @@ public class TesteReferencias {
 	public static void main(String[] args) {
 		
 		System.out.println("**Realizando teste com as primeiras referências**");
-		Conta primeiraConta = new Conta(1337, 24226);
+		Conta primeiraConta = new ContaCorrente(1337, 24226);
 		primeiraConta.getSaldo();
 		System.out.println("Saldo da primeira conta: " + primeiraConta.getSaldo());
 		
@@ -32,7 +32,7 @@ public class TesteReferencias {
 		brendon.setCpf("222.222.222-41");
 		brendon.setProfissao("Programador");
 		
-		Conta contaDoBrendon = new Conta(1337, 24226);
+		Conta contaDoBrendon = new ContaCorrente(1337, 24226);
 		contaDoBrendon.deposita(100);
 		
 		contaDoBrendon.setTitular(brendon);
@@ -48,15 +48,11 @@ public class TesteReferencias {
 		g1.setNome("Juninho");
 		g1.setSalario(5000.0);
 		
-		Funcionario f = new Funcionario();
-		f.setSalario(2000.0);
-		
 		EditorVideo ev = new EditorVideo();
-		f.setSalario(2500.0);
+		ev.setSalario(2500.0);
 		
 		ControleBonificacao controle = new ControleBonificacao();
 		controle.registra(g1);
-		controle.registra(f);
 		controle.registra(ev);
 		
 		System.out.println(controle.getSoma());
