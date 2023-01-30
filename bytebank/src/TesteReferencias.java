@@ -60,5 +60,18 @@ public class TesteReferencias {
 		controle.registra(ev);
 		
 		System.out.println(controle.getSoma());
+		
+		System.out.println();
+		System.out.println("Teste com tipos de conta.");
+		
+		ContaCorrente cc = new ContaCorrente(111, 111);
+		cc.deposita(100.0);
+		
+		ContaPoupanca cp = new ContaPoupanca(222, 222);
+		cp.deposita(200.0);
+		
+		cc.tranfere(10.0, cp);
+		System.out.println("O saldo da CC é R$ " + cc.getSaldo());
+		System.out.println("O saldo da CP é R$ " + cp.getSaldo());
 	}
 }
