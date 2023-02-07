@@ -4,7 +4,7 @@ public abstract class Funcionario {
 	
 	private String nome;
 	private String cpf;
-	protected double salario; //protected para ficar publico para as classes filho
+	protected double salario; //protected para ficar publico as classes filho
 	
 	//metodo sem implementacao
 	public abstract double getBonificacao(); //Método abstrato, pois não existe uma bonificacao padrão para os funcionarios

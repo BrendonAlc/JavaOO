@@ -59,6 +59,7 @@ public class TesteReferencias {
 		
 		System.out.println();
 		System.out.println("Teste com tipos de conta.");
+		System.out.println();
 		
 		ContaCorrente cc = new ContaCorrente(111, 111);
 		cc.deposita(100.0);
@@ -69,5 +70,26 @@ public class TesteReferencias {
 		cc.tranfere(10.0, cp);
 		System.out.println("O saldo da CC é R$ " + cc.getSaldo());
 		System.out.println("O saldo da CP é R$ " + cp.getSaldo());
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("---Teste da classe SistemaInterno---");
+		System.out.println();
+		
+		Gerente g = new Gerente();
+		g.setSenha(2222);
+		
+		Administrador adm = new Administrador();
+		adm.setSenha(3333);
+		
+		Cliente cliente = new Cliente();
+		cliente.setSenha(2222);
+		
+		SistemaInterno si = new SistemaInterno();
+		si.autentica(g);
+		si.autentica(adm);
+		si.autentica(cliente);
+
+
 	}
 }

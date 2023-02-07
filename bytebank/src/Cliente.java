@@ -1,5 +1,7 @@
 
-public class Cliente {
+public class Cliente implements Autenticavel {
+	
+	private int senha;
 	private String nome;
 	private String cpf;
 	private String profissao;
@@ -26,5 +28,21 @@ public class Cliente {
 	
 	public void setProfissao(String profissao) {
 		this.profissao = profissao;
+	}
+
+	//método getSenha
+	@Override
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+	
+	//método autentica
+	@Override
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		} else {
+			return false;	
+		}
 	}
 }
