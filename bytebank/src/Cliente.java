@@ -1,7 +1,7 @@
 
 public class Cliente implements Autenticavel {
 	
-	private int senha;
+	private AutenticacaoUtil autenticador;
 	private String nome;
 	private String cpf;
 	private String profissao;
@@ -30,19 +30,20 @@ public class Cliente implements Autenticavel {
 		this.profissao = profissao;
 	}
 
-	//método getSenha
-	@Override
-	public void setSenha(int senha) {
-		this.senha = senha;
+	//método para classe AutenticacaoUtil realizar verificação de senha
+	
+	public Cliente() {
+		this.autenticador = new AutenticacaoUtil();
 	}
 	
-	//método autentica
+	//Autenticação da senha, delegando a chamada para o método util criando para chamar a classe AutenticacaoUtil
+	@Override
+	public void setSenha(int senha) {
+		this.autenticador.setSenha(senha);
+	}
+
 	@Override
 	public boolean autentica(int senha) {
-		if(this.senha == senha) {
-			return true;
-		} else {
-			return false;	
-		}
-	}
+		return this.autenticador.autentica(senha);
+	}	
 }

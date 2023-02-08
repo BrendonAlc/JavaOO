@@ -90,6 +90,21 @@ public class TesteReferencias {
 		si.autentica(adm);
 		si.autentica(cliente);
 
+		System.out.println();
+		System.out.println("---Teste de implementação da Interface Tributavel---");
+		System.out.println();
+		
+		ContaCorrente br = new ContaCorrente(222, 333);
+		br.deposita(100.0);
+		
+		SeguroDeVida seguro = new SeguroDeVida();
+		
+		CalculadorDeImposto calc = new CalculadorDeImposto();
+		calc.registra(br);
+		calc.registra(seguro);
+		
+		System.out.println(calc.getTotalImposto());
+		
 
 	}
 }
