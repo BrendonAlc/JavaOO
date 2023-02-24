@@ -1,7 +1,7 @@
 
 public class TesteReferencias {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SaldoInsuficienteException{
 		
 		System.out.println("**Realizando teste com as primeiras referências**");
 		Conta primeiraConta = new ContaCorrente(1337, 24226);
@@ -104,6 +104,17 @@ public class TesteReferencias {
 		calc.registra(seguro);
 		
 		System.out.println(calc.getTotalImposto());
+		
+		System.out.println();
+		System.out.println("---Teste Utilizando trow no método Saque---");
+		System.out.println();
+		
+		Conta conta = new ContaCorrente(123, 321);
+		
+		conta.deposita(200.0);
+		conta.saque(300.0);
+		
+		System.out.println(conta.getSaldo());
 		
 
 	}
