@@ -1,5 +1,7 @@
 package br.com.bytebank.teste;
 
+import java.util.ArrayList;
+
 import br.com.bytebank.banco.modelo.*;
 
 public class TesteReferencias {
@@ -114,11 +116,41 @@ public class TesteReferencias {
 		
 		Conta conta = new ContaCorrente(123, 321);
 		
-		conta.deposita(200.0);
+		conta.deposita(300.0);
 		conta.saque(300.0);
 		
 		System.out.println(conta.getSaldo());
 		
-
+		System.out.println();
+		System.out.println("---Teste de ArrayList---");
+		System.out.println();
+		
+		//Utilizando generics
+		ArrayList<Conta> guardador = new ArrayList<Conta>();
+		
+		Conta cc1 = new ContaCorrente(22, 11);
+		guardador.add(cc1);
+		
+		Conta cc2 = new ContaCorrente(22, 22);
+		guardador.add(cc2);
+		
+		System.out.println("Tamanho: " + guardador.size());
+		
+		Conta ref = guardador.get(0);
+		System.out.println(ref.getNumero());
+		
+		guardador.remove(0);
+		System.out.println("Tamanho: " + guardador.size());
+		
+		Conta cc3 = new ContaCorrente(33, 311);
+		guardador.add(cc3);
+		
+		Conta cc4 = new ContaCorrente(33, 322);
+		
+		for(int i = 0; i < guardador.size(); i++) {
+			Object oRef = guardador.get(i);
+			System.out.println(oRef);
+		
+		}
 	}
 }
