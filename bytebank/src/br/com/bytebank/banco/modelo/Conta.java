@@ -6,7 +6,7 @@ package br.com.bytebank.banco.modelo;
  * @author BrendonAlc
  * @version 0.1
  */
-public abstract class Conta {
+public abstract class Conta extends Object {
 	protected double saldo = 100;
 	private int agencia;
 	private int numero;
@@ -112,6 +112,27 @@ public abstract class Conta {
 	
 	public static int getTotal() {
 		return Conta.total;
+	}
+	
+	@Override
+	public boolean equals(Object ref) {
+		
+		Conta outra = (Conta) ref;
+		if (this.agencia != outra.agencia) {
+			return false;
+		}
+		
+		if (this.numero != outra.numero) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return "Número: " + this.numero + ", Agencia: " + this.agencia;
+
 	}
 	
 	
