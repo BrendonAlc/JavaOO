@@ -1,5 +1,6 @@
 package br.com.bytebank.banco.modelo;
 
+
 public class GuardadorDeContas {
 	private Object[] referencias;
 	private int posicaoLivre;
@@ -14,7 +15,7 @@ public class GuardadorDeContas {
 		this.posicaoLivre++;
 	}
 
-	public int getQuantidadeElementos() {
+	public int getQuantidadeDeElementos() {
 		return this.posicaoLivre;
 	}
 
