@@ -1,6 +1,8 @@
 package br.com.bytebank.teste;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 import br.com.bytebank.banco.modelo.*;
 
@@ -126,31 +128,92 @@ public class TesteReferencias {
 		System.out.println();
 		
 		//Utilizando generics
-		ArrayList<Conta> guardador = new ArrayList<Conta>();
+		
+		ArrayList<Conta> lista = new ArrayList<Conta>();
+		
+
 		
 		Conta cc1 = new ContaCorrente(22, 11);
-		guardador.add(cc1);
+		lista.add(cc1);
 		
 		Conta cc2 = new ContaCorrente(22, 22);
-		guardador.add(cc2);
+		lista.add(cc2);
 		
-		System.out.println("Tamanho: " + guardador.size());
+		System.out.println("Tamanho: " + lista.size());
 		
-		Conta ref = guardador.get(0);
+		Conta ref = lista.get(0);
 		System.out.println(ref.getNumero());
 		
-		guardador.remove(0);
-		System.out.println("Tamanho: " + guardador.size());
+		lista.remove(0);
+		System.out.println("Tamanho: " + lista.size());
 		
 		Conta cc3 = new ContaCorrente(33, 311);
-		guardador.add(cc3);
+		lista.add(cc3);
 		
 		Conta cc4 = new ContaCorrente(33, 322);
+		lista.add(cc4);
 		
-		for(int i = 0; i < guardador.size(); i++) {
-			Object oRef = guardador.get(i);
+		for(int i = 0; i < lista.size(); i++) {
+			Object oRef = lista.get(i);
 			System.out.println(oRef);
-		
 		}
+		System.out.println("----------");
+		
+		for(Conta conta1 : lista) {
+			System.out.println(conta1);
+		}
+		
+		System.out.println();
+		System.out.println("**Teste Generics com equals**");
+		System.out.println();
+		
+		ArrayList<Conta> lista1 = new ArrayList<Conta>();
+		
+		Conta cc5 = new ContaCorrente(44, 44);
+		lista.add(cc5);
+		
+		Conta cc6 = new ContaCorrente(44, 45);
+		lista.add(cc6);
+		
+		Conta cc7 = new ContaCorrente(44, 46);
+		boolean existe = lista.contains(cc7);
+		
+		System.out.println("Conta já existe? " + existe);
+		
+		for(Conta conta3 : lista) {
+			System.out.println(conta3);
+		}
+		
+		System.out.println();
+		System.out.println("**Teste Generics com LinkedList**");
+		System.out.println();
+		
+		
+		List<Conta> lista2 = new ArrayList<Conta>();
+		
+		Conta cc8 = new ContaCorrente(22, 11);
+		lista.add(cc1);
+		
+		Conta cc9 = new ContaCorrente(22, 22);
+		lista.add(cc2);
+		
+		System.out.println("Tamanho: " + lista.size());
+		
+		Conta ref1 = lista.get(0);
+		System.out.println(ref.getNumero());
+		
+		lista.remove(0);
+		System.out.println("Tamanho: " + lista.size());
+		
+		for(int i = 0; i < lista.size(); i++) {
+			Object oRef = lista.get(i);
+			System.out.println(oRef);
+		}
+		System.out.println("----------");
+		
+		for(Conta conta1 : lista) {
+			System.out.println(conta1);
+		}
+	
 	}
 }
