@@ -1,10 +1,22 @@
 package br.com.bytebank.teste;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import br.com.bytebank.banco.modelo.*;
+import br.com.bytebank.banco.modelo.Administrador;
+import br.com.bytebank.banco.modelo.CalculadorDeImposto;
+import br.com.bytebank.banco.modelo.Cliente;
+import br.com.bytebank.banco.modelo.Conta;
+import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
+import br.com.bytebank.banco.modelo.ControleBonificacao;
+import br.com.bytebank.banco.modelo.EditorVideo;
+import br.com.bytebank.banco.modelo.Gerente;
+import br.com.bytebank.banco.modelo.SaldoInsuficienteException;
+import br.com.bytebank.banco.modelo.SeguroDeVida;
+import br.com.bytebank.banco.modelo.SistemaInterno;
 
 public class TesteReferencias {
 	
@@ -214,6 +226,51 @@ public class TesteReferencias {
 		for(Conta conta1 : lista) {
 			System.out.println(conta1);
 		}
-	
+		System.out.println("-----------");
+		System.out.println("Teste do método ComparaTo criado na classe Conta");//método para comparar contas e deixa-las ordenadas
+		System.out.println();
+		
+		Cliente clienteCC5 = new Cliente();
+		clienteCC5.setNome("Luiz");
+		cc5.setTitular(clienteCC5);
+		cc5.deposita(222.0);
+		
+		Cliente clienteCC6 = new Cliente();
+		clienteCC6.setNome("Ana");
+		cc6.setTitular(clienteCC6);
+		cc6.deposita(111.0);
+		
+		Cliente clienteCC7 = new Cliente();
+		clienteCC7.setNome("Cleusa");
+		cc7.setTitular(clienteCC7);
+		cc7.deposita(333.0);
+		
+		Cliente clienteCC8 = new Cliente();
+		clienteCC8.setNome("Rildo");
+		cc8.setTitular(clienteCC8);
+		cc8.deposita(444.0);
+		
+		List<Conta> lista11 = new ArrayList<>();
+		lista11.add(cc5);
+		lista11.add(cc6);
+		lista11.add(cc7);
+		lista11.add(cc8);
+		
+		
+		for(Conta conta1 : lista11) {
+			System.out.println(conta1);
+		}
+		
+		//lista11.sort(null); //Para ordem natural utilizar parametro null para forcar
+		lista11.sort(new TitularDaContaComparator()); // 
+		
+		Collections.sort(lista11); //ordem crescente
+		//Collections.reverse(lista); //ordem reversa, sendo decrescente
+		
+		System.out.println("-----------------");
+		
+		for(Conta conta1 : lista11) {
+			System.out.println(conta1 + ", " + conta1.getTitular().getNome());
+		}
 	}
 }
